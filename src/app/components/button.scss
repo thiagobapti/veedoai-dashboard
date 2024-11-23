@@ -1,0 +1,13 @@
+@import "../styles/globals.scss";
+
+$root: button;
+
+.#{$root} {
+  height: 60px;
+  background-color: #2a2a2a;
+
+  &--default {
+    height: 60px;
+    background-color: blue;
+  }
+}

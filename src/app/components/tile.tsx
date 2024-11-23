@@ -7,12 +7,14 @@ interface TileProps {
   className?: string;
 }
 
-const block = "tile";
-export function Tile({ children, title, className }: TileProps) {
+export const block = "tile";
+const Tile: React.FC<TileProps> = ({ children, title, className }) => {
   return (
     <div className={`${block} ${className}`}>
       <h3>{title}</h3>
       {children}
     </div>
   );
-}
+};
+
+export default Tile;

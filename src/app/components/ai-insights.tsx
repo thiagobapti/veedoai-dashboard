@@ -1,5 +1,5 @@
 import React from "react";
-import { Tile } from "./tile";
+import Tile from "./tile";
 
 interface AiInsightsProps {
   onClick: () => void;

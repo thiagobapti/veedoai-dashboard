@@ -5,6 +5,13 @@ $root: tile;
 .#{$root} {
   $root: &;
 
+  &--default {
+    height: 500px;
+    width: 500px;
+  }
+
+  border: 1px solid #000;
+
   background-color: #ffffff;
   border-radius: 8px;
   padding: 20px;
@@ -13,5 +20,10 @@ $root: tile;
 
   @include desktop {
     padding: 30px;
+  }
+
+  &[data-storybook] {
+    background-color: red;
+    height: 500px;
   }
 }
