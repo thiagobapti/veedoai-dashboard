@@ -1,0 +1,17 @@
+@import "../styles/globals.scss";
+
+$root: tile;
+
+.#{$root} {
+  $root: &;
+
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  // margin-bottom: 20px;
+  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  @include desktop {
+    padding: 30px;
+  }
+}

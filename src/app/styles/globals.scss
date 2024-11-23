@@ -3,12 +3,6 @@ $tablet-min-width: 768px;
 $desktop-min-width: 1024px;
 $large-min-width: 1440px;
 
-//Z-index
-$zi-lp-blocks: 11;
-$zi-lp-fixed-header: 13;
-$zi-lp-fixed-header-scroll-helper: 12; // Precisa estar acima dos blocks
-$zi-lp-hero: 12;
-
 // Misc
 $lp-hero-bg-color: #4872fa;
 
@@ -28,14 +22,5 @@ $lp-hero-bg-color: #4872fa;
 @mixin large {
   @media (min-width: #{$large-min-width}) {
     @content;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0 !important;
-  }
-  100% {
-    opacity: 1 !important;
   }
 }

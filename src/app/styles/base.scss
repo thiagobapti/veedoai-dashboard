@@ -21,8 +21,9 @@ body {
 }
 
 .container {
-  width: 89%;
-  max-width: 1120px;
+  border: 1px solid red;
+  width: calc(100% - 20px);
+  max-width: 1400px;
   margin: 0 auto;
 }
 

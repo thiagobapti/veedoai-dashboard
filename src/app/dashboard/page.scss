@@ -6,8 +6,46 @@ $root: dashboard-page;
   $root: &;
 
   background-color: red;
+  height: calc(100vh);
 
   @include desktop {
-    background-color: rgb(51, 51, 54);
+    // background-color: rgb(51, 51, 54);
+  }
+
+  &__container {
+    // height: 100%;
+    border: 1px dotted blue;
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__tiles {
+    border: 1px dotted green;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @include desktop {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__tile {
+    $gap: 10px;
+    margin-bottom: $gap;
+    flex-shrink: 0;
+
+    &:nth-child(even) {
+      margin-right: 0;
+    }
+
+    @include desktop {
+      margin-right: $gap;
+      height: calc(50% - $gap);
+      flex: calc(50% - $gap);
+      margin-bottom: 0;
+    }
   }
 }
