@@ -1,0 +1,13 @@
+@import "../styles/globals.scss";
+
+$root: dashboard-page;
+
+.#{$root} {
+  $root: &;
+
+  background-color: red;
+
+  @include desktop {
+    background-color: rgb(51, 51, 54);
+  }
+}
