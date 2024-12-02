@@ -1,0 +1,23 @@
+@import "../styles/globals.scss";
+
+$root: ai-insights;
+
+.#{$root} {
+  // height: 60px;
+  // background-color: #2a2a2a;
+
+  &--default {
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__insight-card {
+    background-color: #2a2a2a;
+    height: 100px;
+    margin-bottom: 20px;
+    border-radius: $tile-radius;
+  }
+}

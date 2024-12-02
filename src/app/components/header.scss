@@ -3,6 +3,8 @@
 $root: header;
 
 .#{$root} {
-  height: 60px;
-  background-color: #2a2a2a;
+  height: $header-height;
+  background-color: #353533;
+  border-radius: $tile-radius;
+  margin-top: 10px;
 }

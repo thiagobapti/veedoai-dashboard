@@ -4,7 +4,8 @@ $desktop-min-width: 1024px;
 $large-min-width: 1440px;
 
 // Misc
-$lp-hero-bg-color: #4872fa;
+$header-height: 60px;
+$tile-radius: 8px;
 
 // Breakpoints
 @mixin tablet {
@@ -22,5 +23,14 @@ $lp-hero-bg-color: #4872fa;
 @mixin large {
   @media (min-width: #{$large-min-width}) {
     @content;
+  }
+}
+
+@mixin hidden-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
