@@ -6,6 +6,7 @@ import {
   EyeIcon,
   GlobeAltIcon,
   HeartIcon,
+  SparklesIcon,
   TvIcon,
 } from "@heroicons/react/24/solid";
 
@@ -36,6 +37,11 @@ const AiInsights: React.FC<AiInsightsProps> = ({ className }) => {
                 )}
               </div>
               {insight.title}
+              {insight.new && (
+                <div className={`${root}__insight-card-title-icon-new`}>
+                  new
+                </div>
+              )}
             </div>
             <div className={`${root}__insight-card-description`}>
               {insight.description.map((description) => (

@@ -5,6 +5,7 @@ const insights = [
       "Leverage TikTok for short, viral content to grow your audience, then funnel viewers to YouTube for long-form videos and higher earnings. A multi-platform strategy ensures both audience growth and increased revenue.",
     ],
     type: "platforms insight",
+    new: true,
   },
   {
     title: "Compelling thumbnails drive higher click-through rates",

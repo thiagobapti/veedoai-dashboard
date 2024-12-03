@@ -36,7 +36,7 @@ $root: ai-insights;
     height: 20px;
     // background-color: #000;
     border-radius: 50%;
-    margin-right: 8px;
+    margin-right: 6px;
   }
 
   &__insight-card-description {
@@ -48,5 +48,15 @@ $root: ai-insights;
 
   &__insight-card-description-item {
     margin-bottom: 10px;
+  }
+
+  &__insight-card-title-icon-new {
+    background-color: #dea013;
+    color: black;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 0 4px;
+    font-size: 12px;
+    margin-left: 5px;
   }
 }

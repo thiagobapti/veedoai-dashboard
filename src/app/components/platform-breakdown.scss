@@ -1,6 +1,6 @@
 @import "../styles/globals.scss";
 
-$root: statistics;
+$root: platform-breakdown;
 
 .#{$root} {
   // height: 60px;
@@ -10,9 +10,9 @@ $root: statistics;
   }
 
   &__inner {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 20px;
+    margin-top: 15px;
+    width: 100%;
+    height: calc(100% - 35px);
+    position: relative;
   }
 }

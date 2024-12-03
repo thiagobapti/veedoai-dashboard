@@ -3,30 +3,32 @@
 import React from "react";
 import Tile from "./tile";
 import ParentSize from "@visx/responsive/lib/components/ParentSize";
-import Example from "./pie-chart";
-import "./platform-breakdown.scss";
-interface PlatformBreakdownProps {
+import "./engagement-tracking.scss";
+import BrushChart from "./brush-chart";
+interface EngagementTrackingProps {
   className?: string;
 }
 
-const block = "platform-breakdown";
-const PlatformBreakdown: React.FC<PlatformBreakdownProps> = ({ className }) => {
+const block = "engagement-tracking";
+const EngagementTracking: React.FC<EngagementTrackingProps> = ({
+  className,
+}) => {
   const [key, setKey] = React.useState(0);
 
   return (
     <Tile
-      title="🌎 Platform Breakdown"
+      title="❤️ Engagement Tracking"
       className={`${block} ${className}`}
       expandable
       onExpandChange={() => setKey((prev) => prev + 1)}
     >
       <div className={`${block}__inner`}>
         <ParentSize debounceTime={10} key={key}>
-          {({ width, height }) => <Example width={width} height={height} />}
+          {({ width, height }) => <BrushChart width={width} height={height} />}
         </ParentSize>
       </div>
     </Tile>
   );
 };
 
-export default PlatformBreakdown;
+export default EngagementTracking;

@@ -4,7 +4,7 @@ import React, { useCallback, useState, useEffect } from "react";
 import Header from "../components/header";
 import "./page.scss";
 import PlatformBreakdown from "../components/platform-breakdown";
-import Statistics from "../components/statistics";
+import Statistics from "../components/engagement-tracking";
 import Content from "../components/content";
 import AiInsights from "../components/ai-insights";
 import Modal from "../components/modal";
