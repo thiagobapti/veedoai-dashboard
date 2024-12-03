@@ -25,7 +25,7 @@ const Tile: React.FC<TileProps> = ({
           onClick={() => setExpanded(!expanded)}
         ></button>
       )}
-      {title && <div>{title}</div>}
+      {title && <div className={`${block}__title`}>{title}</div>}
       {children}
     </div>
   );

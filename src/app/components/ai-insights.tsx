@@ -2,6 +2,13 @@ import React from "react";
 import Tile from "./tile";
 import "./ai-insights.scss";
 import insights from "../data/insights";
+import {
+  EyeIcon,
+  GlobeAltIcon,
+  HeartIcon,
+  TvIcon,
+} from "@heroicons/react/24/solid";
+
 interface AiInsightsProps {
   onClick: () => void;
   className?: string;
@@ -9,11 +16,37 @@ interface AiInsightsProps {
 const root = "ai-insights";
 const AiInsights: React.FC<AiInsightsProps> = ({ className }) => {
   return (
-    <Tile title="AI Insights" className={`${root} ${className}`} expandable>
+    <Tile title="⚡️ AI Insights" className={`${root} ${className}`} expandable>
       <div className={`${root}__inner`}>
         {insights.map((insight) => (
           <div className={`${root}__insight-card`} key={insight.title}>
-            {insight.title}
+            <div className={`${root}__insight-card-title`}>
+              <div
+                className={`${root}__insight-card-title-icon`}
+                title={insight.type}
+              >
+                {insight.type === "engagement insight" && (
+                  <HeartIcon color="#ff8b8b" />
+                )}
+                {insight.type === "content optimization insight" && (
+                  <TvIcon color="#2c9cef" />
+                )}
+                {insight.type === "platforms insight" && (
+                  <GlobeAltIcon color="#93ff94" />
+                )}
+              </div>
+              {insight.title}
+            </div>
+            <div className={`${root}__insight-card-description`}>
+              {insight.description.map((description) => (
+                <div
+                  key={description}
+                  className={`${root}__insight-card-description-item`}
+                >
+                  {description}
+                </div>
+              ))}
+            </div>
           </div>
         ))}
       </div>

@@ -12,7 +12,7 @@ interface ContentProps {
 const block = "content";
 const Content: React.FC<ContentProps> = ({ className }) => {
   return (
-    <Tile title="Content" className={`${block} ${className}`} expandable>
+    <Tile title="📺 Content" className={`${block} ${className}`} expandable>
       <div className={`${block}__inner`}>
         {content.map((item) => (
           <div className={`${block}__video-card`} key={item.videoURL}>

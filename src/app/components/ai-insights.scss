@@ -10,14 +10,43 @@ $root: ai-insights;
   }
 
   &__inner {
+    @include hidden-scroll;
+
     display: flex;
     flex-direction: column;
+    margin-top: 18px;
+    overflow-y: auto;
   }
 
   &__insight-card {
     background-color: #2a2a2a;
-    height: 100px;
     margin-bottom: 20px;
     border-radius: $tile-radius;
+    padding: 10px;
+  }
+
+  &__insight-card-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__insight-card-title-icon {
+    width: 20px;
+    height: 20px;
+    // background-color: #000;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+
+  &__insight-card-description {
+    margin-top: 10px;
+    color: rgba(#f0f0f0, 0.6);
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  &__insight-card-description-item {
+    margin-bottom: 10px;
   }
 }

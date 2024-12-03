@@ -17,6 +17,7 @@ $root: content;
 
     border-top-right-radius: $tile-radius;
     border-top-left-radius: $tile-radius;
+    margin-top: 18px;
   }
 
   &__video-card {
@@ -59,7 +60,6 @@ $root: content;
 
   &__video-card-tag {
     background-color: rgba(#3a3a3a, 0.8);
-    border: 1px solid rgba(#3a3a3a, 1);
     padding: 3px 4px;
     border-radius: 5px;
     font-size: 12px;

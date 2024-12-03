@@ -10,11 +10,11 @@ $root: tile;
   background-color: #353533;
   color: #f0f0f0;
   border-radius: $tile-radius;
-  padding: 20px;
+  padding: 15px;
   position: relative;
 
   @include desktop {
-    padding: 30px;
+    // padding: 30px;
   }
 
   &--default {
@@ -41,5 +41,10 @@ $root: tile;
     background: #242424;
     border-radius: 8px;
     cursor: pointer;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
   }
 }
