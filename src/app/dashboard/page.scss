@@ -8,7 +8,7 @@ $root: dashboard-page;
   height: calc(100vh);
   display: flex;
   flex-direction: column;
-  padding-top: $header-height;
+  // padding-top: $header-height;
 
   @include desktop {
     // background-color: rgb(51, 51, 54);
@@ -25,7 +25,7 @@ $root: dashboard-page;
     height: calc(100% - $header-height);
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
+    // margin-top: 10px;
   }
 
   &__tiles {
@@ -43,6 +43,8 @@ $root: dashboard-page;
     $gap: 10px;
     margin-bottom: $gap;
     flex-shrink: 0;
+    height: 100%;
+    max-height: 50vh;
 
     &:nth-child(even) {
       margin-right: 0;
@@ -50,9 +52,11 @@ $root: dashboard-page;
 
     @include desktop {
       margin-right: $gap;
-      height: calc(50% - $gap);
+      // height: calc(50% - $gap);
+      height: 100%;
+      max-height: 50vh;
       flex: calc(50% - $gap);
-      margin-bottom: 0;
+      // margin-bottom: 0;
     }
   }
 

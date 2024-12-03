@@ -23,7 +23,7 @@ const PATTERN_ID = "brush_pattern";
 const GRADIENT_ID = "brush_gradient";
 export const accentColor = "#f6acc8";
 export const background = "#584153";
-export const background2 = "#af8baf";
+export const background2 = "#695be4";
 const selectedBrushStyle = {
   fill: `url(#${PATTERN_ID})`,
   stroke: "white",
@@ -157,12 +157,12 @@ function BrushChart({
   return (
     <div>
       <svg width={width} height={height}>
-        <LinearGradient
+        {/* <LinearGradient
           id={GRADIENT_ID}
           from={background}
           to={background2}
           rotate={45}
-        />
+        /> */}
         <rect
           x={0}
           y={0}

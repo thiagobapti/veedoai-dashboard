@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import Tile from "./tile";
 import "./content.scss";
 import content from "../data/content";
@@ -11,14 +11,22 @@ interface ContentProps {
 
 const block = "content";
 const Content: React.FC<ContentProps> = ({ className }) => {
+  const openVideoUrl = useCallback((url: string) => {
+    window.open(url, "_blank");
+  }, []);
   return (
-    <Tile title="📺 Content" className={`${block} ${className}`} expandable>
+    <Tile
+      title={`📺 Content (${content.length})`}
+      className={`${block} ${className}`}
+      expandable
+    >
       <div className={`${block}__inner`}>
         {content.map((item) => (
           <div className={`${block}__video-card`} key={item.videoURL}>
             <div
               className={`${block}__video-card-thumbnail`}
               style={{ backgroundImage: `url(${item.thumbnailURL})` }}
+              onClick={() => openVideoUrl(item.videoURL)}
             >
               <div className={`${block}__video-card-tags`}>
                 <div className={`${block}__video-card-tag`}>
@@ -39,6 +47,9 @@ const Content: React.FC<ContentProps> = ({ className }) => {
                   {item.likes}
                 </div>
               </div>
+              {/* <ArrowTopRightOnSquareIcon
+                className={`${block}__video-card-play-icon`}
+              /> */}
             </div>
             <div className={`${block}__video-card-info`}>
               <div className={`${block}__video-card-title`}>{item.title}</div>

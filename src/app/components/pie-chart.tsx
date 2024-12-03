@@ -5,14 +5,14 @@ import React, { useState } from "react";
 import Pie, { ProvidedProps, PieArcDatum } from "@visx/shape/lib/shapes/Pie";
 import { scaleOrdinal } from "@visx/scale";
 import { Group } from "@visx/group";
-import { GradientPinkBlue } from "@visx/gradient";
+import { GradientPinkBlue, LinearGradient } from "@visx/gradient";
 import letterFrequency, {
   LetterFrequency,
 } from "@visx/mock-data/lib/mocks/letterFrequency";
 import browserUsage, {
   BrowserUsage as Browsers,
 } from "@visx/mock-data/lib/mocks/browserUsage";
-import { animated, useTransition, to } from "@react-spring/web";
+import { animated, useTransition, to, SpringValue } from "@react-spring/web";
 
 // data and types
 type BrowserNames = keyof Browsers;
@@ -39,23 +39,18 @@ const frequency = (d: LetterFrequency) => d.frequency;
 const getBrowserColor = scaleOrdinal({
   domain: browserNames,
   range: [
-    "rgba(255,255,255,0.7)",
-    "rgba(255,255,255,0.6)",
-    "rgba(255,255,255,0.5)",
-    "rgba(255,255,255,0.4)",
-    "rgba(255,255,255,0.3)",
-    "rgba(255,255,255,0.2)",
-    "rgba(255,255,255,0.1)",
+    "#064E3B",
+    "#065F46",
+    "#047857",
+    "#059669",
+    "#10B981",
+    "#34D399",
+    "#6EE7B7",
   ],
 });
 const getLetterFrequencyColor = scaleOrdinal({
   domain: letters.map((l) => l.letter),
-  range: [
-    "rgba(93,30,91,1)",
-    "rgba(93,30,91,0.8)",
-    "rgba(93,30,91,0.6)",
-    "rgba(93,30,91,0.4)",
-  ],
+  range: ["#9A3412", "#C2410C", "#EA580C", "#F97316"],
 });
 
 const defaultMargin = { top: 20, right: 20, bottom: 20, left: 20 };
@@ -89,7 +84,13 @@ export default function Example({
 
   return (
     <svg width={width} height={height}>
-      <GradientPinkBlue id="visx-pie-gradient" />
+      {/* <GradientPinkBlue id="visx-pie-gradient" /> */}
+      {/* <LinearGradient
+        id="visx-pie-gradient"
+        from="#351CAB"
+        to="#621A61"
+        rotate="-45"
+      /> */}
       <rect
         rx={14}
         width={width}
@@ -170,25 +171,16 @@ export default function Example({
           )}
         </Pie>
       </Group>
-      {animate && (
-        <text
-          textAnchor="end"
-          x={width - 16}
-          y={height - 16}
-          fill="white"
-          fontSize={11}
-          fontWeight={300}
-          pointerEvents="none"
-        >
-          Click segments to update
-        </text>
-      )}
     </svg>
   );
 }
 
 // react-spring transition definitions
-type AnimatedStyles = { startAngle: number; endAngle: number; opacity: number };
+type AnimatedStyles = {
+  startAngle: SpringValue<number>;
+  endAngle: SpringValue<number>;
+  opacity: SpringValue<number>;
+};
 
 const fromLeaveTransition = ({ endAngle }: PieArcDatum<any>) => ({
   // enter from 360° if end angle is > 180°
@@ -227,7 +219,11 @@ function AnimatedPie<Datum>({
   });
   return transitions(
     (
-      props: AnimatedStyles,
+      props: {
+        startAngle: SpringValue<number>;
+        endAngle: SpringValue<number>;
+        opacity: SpringValue<number>;
+      },
       arc: PieArcDatum<Datum>,
       { key }: { key: string }
     ) => {

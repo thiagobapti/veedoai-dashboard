@@ -17,7 +17,11 @@ interface AiInsightsProps {
 const root = "ai-insights";
 const AiInsights: React.FC<AiInsightsProps> = ({ className }) => {
   return (
-    <Tile title="⚡️ AI Insights" className={`${root} ${className}`} expandable>
+    <Tile
+      title={`⚡️ AI Insights (${insights.length})`}
+      className={`${root} ${className}`}
+      expandable
+    >
       <div className={`${root}__inner`}>
         {insights.map((insight) => (
           <div className={`${root}__insight-card`} key={insight.title}>
@@ -30,7 +34,7 @@ const AiInsights: React.FC<AiInsightsProps> = ({ className }) => {
                   <HeartIcon color="#ff8b8b" />
                 )}
                 {insight.type === "content optimization insight" && (
-                  <TvIcon color="#2c9cef" />
+                  <TvIcon color="#68bfff" />
                 )}
                 {insight.type === "platforms insight" && (
                   <GlobeAltIcon color="#93ff94" />
