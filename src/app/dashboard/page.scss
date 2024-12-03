@@ -8,6 +8,7 @@ $root: dashboard-page;
   height: calc(100vh);
   display: flex;
   flex-direction: column;
+  padding-top: $header-height;
 
   @include desktop {
     // background-color: rgb(51, 51, 54);
@@ -154,19 +155,6 @@ $root: dashboard-page;
     @include desktop {
       flex: 1;
     }
-  }
-
-  &__statistic-card-label {
-    font-size: 16px;
-    font-weight: 500;
-    color: #f0f0f0;
-  }
-
-  &__statistic-card-value {
-    font-size: 24px;
-    font-weight: 700;
-    color: #f0f0f0;
-    margin-top: 10px;
 
     &--pink {
       color: #ff72ce;
@@ -177,11 +165,22 @@ $root: dashboard-page;
     }
 
     &--blue {
-      color: #2c9cef;
+      color: #68bfff;
     }
 
     &--green {
       color: #93ff94;
     }
+  }
+
+  &__statistic-card-label {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  &__statistic-card-value {
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 6px;
   }
 }

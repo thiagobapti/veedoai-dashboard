@@ -9,6 +9,7 @@ import Content from "../components/content";
 import AiInsights from "../components/ai-insights";
 import Modal from "../components/modal";
 import cn from "classnames";
+import CountUp from "react-countup";
 
 const states = [
   "loading video",
@@ -63,49 +64,57 @@ const Dashboard = () => {
           Add Video
         </button> */}
         <div className={`${block}__stats`}>
-          <div className={`${block}__statistic-card`}>
+          <div
+            className={`${block}__statistic-card ${block}__statistic-card--green`}
+          >
             <div className={`${block}__statistic-card-label`}>Total Views</div>
             <div
               className={`${block}__statistic-card-value ${block}__statistic-card-value--green`}
             >
-              3,388,150
+              <CountUp end={3388150} duration={2.5} />
             </div>
           </div>
-          <div className={`${block}__statistic-card`}>
+          <div
+            className={`${block}__statistic-card ${block}__statistic-card--pink`}
+          >
             <div className={`${block}__statistic-card-label`}>
               Retention Rate
             </div>
             <div
               className={`${block}__statistic-card-value ${block}__statistic-card-value--pink`}
             >
-              78%
+              <CountUp end={78} duration={2.5} />%
             </div>
           </div>
-          <div className={`${block}__statistic-card`}>
+          <div
+            className={`${block}__statistic-card ${block}__statistic-card--yellow`}
+          >
             <div className={`${block}__statistic-card-label`}>
               Subscriber Growth
             </div>
             <div
               className={`${block}__statistic-card-value ${block}__statistic-card-value--yellow`}
             >
-              + 34%
+              <CountUp end={34} duration={2.5} />%
             </div>
           </div>
-          <div className={`${block}__statistic-card`}>
+          <div
+            className={`${block}__statistic-card ${block}__statistic-card--blue`}
+          >
             <div className={`${block}__statistic-card-label`}>
               Income Projection
             </div>
             <div
               className={`${block}__statistic-card-value ${block}__statistic-card-value--blue`}
             >
-              $120,000
+              $<CountUp end={120000} duration={2.5} />
             </div>
           </div>
         </div>
         <div className={`${block}__tiles`}>
           <PlatformBreakdown className={`${block}__tile`} />
           <AiInsights onClick={() => {}} className={`${block}__tile`} />
-          <Statistics onClick={() => {}} className={`${block}__tile`} />
+          <Statistics className={`${block}__tile`} />
           <Content onClick={() => {}} className={`${block}__tile`} />
         </div>
       </div>

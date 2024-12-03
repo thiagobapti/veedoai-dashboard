@@ -220,8 +220,8 @@ function BrushChart({
           />
         </AreaChart>
       </svg>
-      <button onClick={handleClearClick}>Clear</button>&nbsp;
-      <button onClick={handleResetClick}>Reset</button>
+      {/* <button onClick={handleClearClick}>Clear</button>&nbsp;
+      <button onClick={handleResetClick}>Reset</button> */}
     </div>
   );
 }

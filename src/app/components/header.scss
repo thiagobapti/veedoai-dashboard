@@ -5,6 +5,16 @@ $root: header;
 .#{$root} {
   height: $header-height;
   background-color: #353533;
-  border-radius: $tile-radius;
-  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+
+  &__logo {
+    height: 25px;
+    width: auto;
+  }
 }
